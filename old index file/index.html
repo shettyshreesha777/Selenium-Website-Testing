@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selenium test automation</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<<style>
+#list  p {
+    font: arial;
+    font-size: 14px;
+}
+</style>
+</head>
+<body>
+    <h1>Test automation</h1>
+    <button onclick="TestLogger()">Test Log</button>
+    <button onclick="TestRunAll()">Run all Tests</button>
+    <button onclick="callApi1()">Test Script for Carosel Button</button>
+    <button onclick="callApi2()">Test Script for Filters</button>
+    <button onclick="callApi3()">Test Script for Add to Cart</button>
+    <button onclick="callApi4()">Test Script for Count of items in cart</button>
+    <button onclick="callApi5()">Test Script for Login</button>
+    <button onclick="callApi6()">Test Script for Logout</button>
+
+    <script>
+        function TestLogger() {
+            fetch('http://localhost:5000/run-script-testLog', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        }
+        function TestRunAll() {
+            fetch('http://localhost:5000/run-script-testrunall', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        }
+        function callApi1() {
+            fetch('http://localhost:5000/run-script', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        }
+
+        function callApi2() {
+            fetch('http://localhost:5000/run-script-test2', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        }
+        function callApi3() {
+            fetch('http://localhost:5000/run-script-test3', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        }
+        function callApi4() {
+            fetch('http://localhost:5000/run-script-test4', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        }
+        function callApi5() {
+            fetch('http://localhost:5000/run-script-test5', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        }
+        function callApi6() {
+            fetch('http://localhost:5000/run-script-test6', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+        }
+    </script>
+    <div id="list"><p><iframe src="file2.txt" width=800 height=400 frameborder=0 ></iframe></p></div>
+
+</body>
+</html>
+api key
+KwjMBuYZnQ6gk1V6VdKePaaUYNkRec6gD6xgHV5ha4jz0rdHU0kq2pAf4ct6Yocm
+<!--
+import requests
+import json
+url = "https://ap-south-1.aws.data.mongodb-api.com/app/data-oxgyu/endpoint/data/v1/action/findOne"
+
+payload = json.dumps({
+    "collection": "<COLLECTION_NAME>",
+    "database": "<DATABASE_NAME>",
+    "dataSource": "Cluster0",
+    "projection": {
+        "_id": 1
+    }
+})
+headers = {
+  'Content-Type': 'application/json',
+  'Access-Control-Request-Headers': '*',
+  'api-key': 'KwjMBuYZnQ6gk1V6VdKePaaUYNkRec6gD6xgHV5ha4jz0rdHU0kq2pAf4ct6Yocm',
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+-->
