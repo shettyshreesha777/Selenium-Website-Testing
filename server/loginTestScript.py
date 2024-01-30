@@ -8,7 +8,7 @@ from jproperties import Properties
 
 configs = Properties() 
   
-with open('C:\\Users\\SHREESHA\\Desktop\\Selenium test script\\server\\ScriptData.properties','rb') as read_prop: 
+with open('server\\ScriptData.properties','rb') as read_prop: 
     configs.load(read_prop) 
 mongo_url={configs.get("MongoDB_Connect").data}
 #mongo_url="mongodb+srv://ShreeshaShetty:Shreesha7%40@cluster0.ldusz7x.mongodb.net/"

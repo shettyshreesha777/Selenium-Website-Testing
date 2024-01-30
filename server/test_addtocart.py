@@ -8,6 +8,8 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from pymongo import MongoClient 
+import sys
+import streamlitform
 
 #mongo_url="mongodb://localhost:27017"
 mongo_url="mongodb+srv://ShreeshaShetty:Shreesha7%40@cluster0.ldusz7x.mongodb.net/"
@@ -23,18 +25,37 @@ driver = webdriver.Chrome()
 driver.get("http://dummymensapparel.great-site.net/itemcategory.php?catid=1")
 driver.set_window_size(1552, 832)
 #driver.find_element(By.CSS_SELECTOR, ".catg:nth-child(3) img").click()
-driver.find_element(By.CSS_SELECTOR, ".brands:nth-child(6) img").click()
-driver.find_element(By.LINK_TEXT, "Add To Bag").click()
-driver.find_element(By.CSS_SELECTOR, "h4").click()
+with open("testcaseoptions.txt", "r") as file:
+    arr = file.read()
+#arr=streamlitform.selected_options
+for i in range(0,len(arr)):
+    if i==len(arr)-1:
+        driver.find_element(By.CSS_SELECTOR, ".brands:nth-child("+str(int(arr[i])+2)+") img").click()
+        driver.find_element(By.LINK_TEXT, "Add To Bag").click()
+        driver.find_element(By.CSS_SELECTOR, "h4").click()
+    else:
+        driver.find_element(By.CSS_SELECTOR, ".brands:nth-child("+str(int(arr[i])+2)+") img").click()
+        driver.find_element(By.LINK_TEXT, "Add To Bag").click()
+        driver.find_element(By.CSS_SELECTOR, "h4").click()
+        driver.back()
+        driver.back()
 
-get_text=driver.find_element(By.CSS_SELECTOR, "h4").text
-if get_text=="Items in Cart: 4":
+get_text=driver.find_element(By.ID, "cartcount").text
+print(get_text)
+print("Items in Cart:",len(arr))
+if str(len(arr)) in get_text:
+#if get_text == "Items in Cart: "+str(len(arr)):
     t1="Item added to cart Succesfully!!"
     stat="Pass"
 else:
     t1="Add to Cart Unsuccesfull :("
     stat="Fail"
+    
+#delete items added by test case
+for z in range(len(arr)):
+    driver.find_element(By.ID, "removeitem").click()
 driver.close() 
+
 ts=datetime.datetime.now()
 date_time=ts.strftime("%d-%m-%Y, %H:%M:%S")
 f = open("file2.txt", "a")

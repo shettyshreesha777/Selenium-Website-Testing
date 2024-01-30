@@ -181,3 +181,81 @@ Add to Cart Unsuccesfull :(
 Cart item count Verified!
 Occasions Filter Working
 LogOut Succesfull  Number of Test case Passed5  Number of test case failed1
+Test Case on Item Filters
+18-01-2024, 19:40:06   Run 1:	Occasions Filter Working
+Test Case on login
+18-01-2024, 19:46:29   Run 1:	Login Success
+Test Case on Logout Button
+18-01-2024, 19:49:09   Run 1:	LogOut Succesfull
+Test Case on Add to Cart
+18-01-2024, 23:02:04   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+18-01-2024, 23:03:42   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+18-01-2024, 23:08:20   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+18-01-2024, 23:19:51   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+18-01-2024, 23:22:35   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+18-01-2024, 23:24:57   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+18-01-2024, 23:27:04   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+18-01-2024, 23:29:50   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+18-01-2024, 23:37:50   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+19-01-2024, 16:46:18   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+19-01-2024, 16:49:54   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+19-01-2024, 16:52:40   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+21-01-2024, 09:25:49   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+21-01-2024, 09:34:28   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+21-01-2024, 09:38:58   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+21-01-2024, 10:32:24   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+21-01-2024, 11:13:34   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+21-01-2024, 11:17:03   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+21-01-2024, 11:18:09   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+21-01-2024, 11:37:15   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+21-01-2024, 11:44:41   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+21-01-2024, 13:07:36   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+21-01-2024, 13:09:00   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+21-01-2024, 13:12:09   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+21-01-2024, 13:15:11   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+22-01-2024, 14:22:34   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+22-01-2024, 14:30:27   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+22-01-2024, 14:43:25   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+22-01-2024, 14:46:31   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+22-01-2024, 14:54:40   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+22-01-2024, 15:15:01   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+22-01-2024, 16:06:42   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+29-01-2024, 19:15:49   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+29-01-2024, 19:24:57   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+29-01-2024, 19:34:07   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+29-01-2024, 19:35:43   Run 1:	Item added to cart Succesfully!!

@@ -2,6 +2,8 @@ from flask import Flask, request,jsonify
 from flask_cors import CORS
 import webbrowser
 from pymongo import MongoClient
+from streamlit.web import cli as stcli
+import sys
 #app = Flask(__name__)
 import subprocess
 
@@ -40,9 +42,10 @@ def itemfilter():
 
 @app.route('/run-script-test3', methods=['GET'])
 def addtocart():
-    quantum_path= 'server\\test_addtocart.py'
+    quantum_path= 'server\\streamlitform.py'
 
-    subprocess.run(['python3',quantum_path])
+    #subprocess.run(['f"{sys.executable}"',quantum_path])
+    subprocess.run(["python3", "-m", "streamlit", "run", quantum_path])
     print("Test add to cart successful")
     return "success"
 
