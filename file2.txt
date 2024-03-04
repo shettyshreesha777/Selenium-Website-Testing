@@ -315,3 +315,11 @@ Test Case on Item Filters
 28-02-2024, 12:34:40   Run 1:	Occasions Filter Working
 Test Case on Item Filters
 28-02-2024, 12:42:20   Run 1:	Occasions Filter Working
+Test Case on Add to Cart
+04-03-2024, 18:13:14   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+04-03-2024, 18:16:30   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+04-03-2024, 18:29:56   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+04-03-2024, 18:31:05   Run 1:	Item added to cart Succesfully!!

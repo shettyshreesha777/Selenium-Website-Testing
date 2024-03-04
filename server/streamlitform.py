@@ -3,11 +3,12 @@ import pandas as pd
 import subprocess
 def main():
     st.title("HTML Form Data in Streamlit")
-    
-    df = pd.read_excel("C:\\xampp\\htdocs\\Selenium-Website-Testing\\convert.xlsx")
-    num_rows=4
+    uploaded_file = st.file_uploader("Upload your file here...")
+    df = pd.read_excel(uploaded_file)
+    num_rows=8
     option=[]
     i=1
+    passval=1
     for index, row in df.head(num_rows).iterrows():
         option.append(st.checkbox("Option "+str(i)+":  "+row["brand"]+"  "+row["itemname"], value=False))
         i+=1
@@ -18,6 +19,8 @@ def main():
         for x in option:
             if x:
                 selected_options.append(i)
+            if x<6:
+                passval=2
             i+=1
         st.write(selected_options)
         with open("testcaseoptions.txt", "w") as file:
