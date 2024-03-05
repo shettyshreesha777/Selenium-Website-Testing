@@ -34,6 +34,11 @@ x=coll.insert_one(data)
 options = Options()
 options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
+with open("testcaseoptions.txt", "r") as file:
+    arr = file.read()
+    arr=arr.split(" ")
+print(arr)
+
 print("testing started")
 driver = webdriver.Chrome(options=options)
 web_url=configs.get("Login_URL").data
@@ -41,8 +46,8 @@ driver.get(web_url)
 
 
     
-gmailId="abc@gmail.com"
-passWord = "1234"
+gmailId=str(arr[0])
+passWord = str(arr[1])
 try:
     loginBox = driver.find_element(By.NAME, 'email')
     loginBox.send_keys(gmailId)

@@ -59,9 +59,9 @@ def cartcount():
 
 @app.route('/run-script-test5', methods=['GET'])
 def loginTest():
-    quantum_path= 'server\\loginTestScript.py'
+    quantum_path= 'server\\streamlitLoginTC.py'
 
-    subprocess.run(['python',quantum_path])
+    subprocess.run(["python", "-m", "streamlit", "run", quantum_path])
     print("Test successful")
     return "success"
 
