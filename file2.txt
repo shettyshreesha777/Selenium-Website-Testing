@@ -332,6 +332,4 @@ Test Case on Add to Cart
 05-03-2024, 16:34:57   Run 1:	Item added to cart Succesfully!!
 Test Case on login
 05-03-2024, 16:51:55   Run 1:	Login Success
-=======
-04-03-2024, 18:31:05   Run 1:	Item added to cart Succesfully!!
->>>>>>> ea43a0fbcd21842ccb0a44c2ab12e003e79939f7
+
