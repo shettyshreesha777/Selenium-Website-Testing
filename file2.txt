@@ -259,3 +259,75 @@ Test Case on Add to Cart
 29-01-2024, 19:34:07   Run 1:	Item added to cart Succesfully!!
 Test Case on Add to Cart
 29-01-2024, 19:35:43   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+07-02-2024, 16:43:17   Run 1:	Item added to cart Succesfully!!
+Test Case on login
+08-02-2024, 10:17:36   Run 1:	Login Success
+Test Case on login
+08-02-2024, 10:18:20   Run 1:	Login Success
+Test Case on Items in Cart
+08-02-2024, 10:20:46   Run 1:	Cart item count do not match :(
+Test Case on Logout Button
+08-02-2024, 10:21:30   Run 1:	LogOut Succesfull
+Test Case on Add to Cart
+08-02-2024, 10:29:32   Run 1:	Item added to cart Succesfully!!
+Test Case on Item Filters
+08-02-2024, 11:01:57   Run 1:	Occasions Filter Working
+Test Case on Carosel Button
+08-02-2024, 11:23:07   Run 1:	Carosel Button is Working
+Test Case on Carosel Button
+08-02-2024, 11:23:10   Run 1:	Carosel Button is Working
+Test Case on Item Filters
+08-02-2024, 11:32:27   Run 1:	Occasions Filter Working
+Test Case on login
+08-02-2024, 11:33:06   Run 1:	Login Success
+Test Case on login
+15-02-2024, 10:55:25   Run 1:	Login Success
+Test Case on login
+15-02-2024, 10:55:38   Run 1:	Login Success
+Test Case on Add to Cart
+15-02-2024, 10:57:12   Run 1:	Item added to cart Succesfully!!
+Test Case on login
+28-02-2024, 11:55:29   Run 1:	Login Success
+Test Case on Add to Cart
+28-02-2024, 12:01:06   Run 1:	Item added to cart Succesfully!!
+Test Case on login
+28-02-2024, 12:02:03   Run 1:	Login Unsuccesfull
+Test Case on login
+28-02-2024, 12:02:12   Run 1:	Login Success
+Test Case on Logout Button
+28-02-2024, 12:05:56   Run 1:	LogOut Succesfull
+Test Case on Logout Button
+28-02-2024, 12:19:51   Run 1:	LogOut Succesfull
+Test Case on Logout Button
+28-02-2024, 12:22:09   Run 1:	LogOut Succesfull
+Test Case on Item Filters
+28-02-2024, 12:24:56   Run 1:	Occasions Filter Working
+Test Case on Item Filters
+28-02-2024, 12:26:27   Run 1:	Occasions Filter Working
+Test Case on Items in Cart
+28-02-2024, 12:28:45   Run 1:	Cart item count do not match :(
+Test Case on Items in Cart
+28-02-2024, 12:29:38   Run 1:	Cart item count do not match :(
+Test Case on Items in Cart
+28-02-2024, 12:31:54   Run 1:	Cart item count do not match :(
+Test Case on Item Filters
+28-02-2024, 12:34:40   Run 1:	Occasions Filter Working
+Test Case on Item Filters
+28-02-2024, 12:42:20   Run 1:	Occasions Filter Working
+Test Case on Add to Cart
+04-03-2024, 18:13:14   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+04-03-2024, 18:16:30   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+04-03-2024, 18:29:56   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+04-03-2024, 18:31:05   Run 1:	Item added to cart Succesfully!!
+Test Case on Add to Cart
+05-03-2024, 16:05:25   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Carosel Button
+05-03-2024, 16:20:25   Run 1:	Carosel Button is Working
+Test Case on Add to Cart
+05-03-2024, 16:34:57   Run 1:	Item added to cart Succesfully!!
+Test Case on login
+05-03-2024, 16:51:55   Run 1:	Login Success

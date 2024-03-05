@@ -5,12 +5,10 @@ from selenium.webdriver.common.by import By
 from time import sleep
 from pymongo import MongoClient 
 from jproperties import Properties 
-import pandas as pd
-import streamlit as st
 
 configs = Properties() 
   
-with open('server\\ScriptData.properties','rb') as read_prop: 
+with open('C:\\Users\\SHREESHA\\Desktop\\Selenium test script\\server\\ScriptData.properties','rb') as read_prop: 
     configs.load(read_prop) 
 mongo_url={configs.get("MongoDB_Connect").data}
 #mongo_url="mongodb+srv://ShreeshaShetty:Shreesha7%40@cluster0.ldusz7x.mongodb.net/"
@@ -39,10 +37,8 @@ driver = webdriver.Chrome(options=options)
 web_url=configs.get("Login_URL").data
 driver.get(web_url)
 
-
-    
-gmailId="abc@gmail.com"
-passWord = "1234"
+gmailId="hello@gmail.com"
+passWord = "123"
 try:
     loginBox = driver.find_element(By.NAME, 'email')
     loginBox.send_keys(gmailId)

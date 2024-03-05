@@ -5,8 +5,6 @@ from selenium.webdriver.common.by import By
 from time import sleep
 from pymongo import MongoClient 
 from jproperties import Properties 
-import pandas as pd
-import streamlit as st
 
 configs = Properties() 
   
@@ -39,8 +37,6 @@ driver = webdriver.Chrome(options=options)
 web_url=configs.get("Login_URL").data
 driver.get(web_url)
 
-
-    
 gmailId="abc@gmail.com"
 passWord = "1234"
 try:
