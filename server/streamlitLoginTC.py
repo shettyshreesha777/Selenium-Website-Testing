@@ -10,7 +10,6 @@ def main():
     i=1
     j=0
     passval=1
-    arr2=[[0]*2]*2
     for index, row in df.head(2).iterrows():
         option.append(st.checkbox("Option "+str(i)+":  "+row["Web_username"]+"  "+str(row["Web_password"]), value=False))
         i+=1

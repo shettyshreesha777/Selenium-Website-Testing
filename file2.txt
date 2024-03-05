@@ -372,3 +372,9 @@ Test Case on login
 05-03-2024, 19:18:12   Run 1:	Login Success
 Test Case on login
 05-03-2024, 19:18:27   Run 1:	Login Unsuccesfull
+Test Case on login
+05-03-2024, 21:06:21   Run 1:	Login Success
+Test Case on Carosel Button
+05-03-2024, 21:14:49   Run 1:	Carosel Button not Working :(
+Test Case on Carosel Button
+05-03-2024, 21:15:09   Run 1:	Carosel Button not Working :(
