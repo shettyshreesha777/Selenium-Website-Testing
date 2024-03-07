@@ -2,6 +2,9 @@
 import pytest
 import time
 import json
+import pandas as pd
+import streamlit as st
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -10,35 +13,54 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
-class TestAddstudent():
-  def setup_method(self, method):
-    self.driver = webdriver.Chrome()
-    self.vars = {}
-  
-  def teardown_method(self, method):
-    self.driver.quit()
-  
-  def test_addstudent(self):
-    self.driver.get("http://localhost/stud-attend/index.php")
-    self.driver.set_window_size(1186, 800)
-    self.driver.find_element(By.ID, "input1").click()
-    self.driver.find_element(By.ID, "input1").send_keys("admin")
-    self.driver.find_element(By.NAME, "pass").click()
-    self.driver.find_element(By.NAME, "pass").send_keys("admin")
-    self.driver.find_element(By.CSS_SELECTOR, "label:nth-child(3) > #optionsRadios1").click()
-    self.driver.find_element(By.NAME, "login").click()
-    self.driver.find_element(By.ID, "input1").click()
-    self.driver.find_element(By.ID, "input1").send_keys("901")
-    self.driver.find_element(By.NAME, "st_name").click()
-    self.driver.find_element(By.NAME, "st_name").send_keys("yoyo")
-    self.driver.find_element(By.NAME, "st_dept").click()
-    self.driver.find_element(By.NAME, "st_dept").send_keys("CSE")
-    self.driver.find_element(By.NAME, "st_batch").click()
-    self.driver.find_element(By.NAME, "st_batch").send_keys("24")
-    self.driver.find_element(By.NAME, "st_sem").click()
-    self.driver.find_element(By.NAME, "st_sem").send_keys("fall")
-    self.driver.find_element(By.NAME, "st_email").click()
-    self.driver.find_element(By.NAME, "st_email").send_keys("samir@gmail.com")
-    self.driver.find_element(By.NAME, "std").click()
-    self.driver.close()
+
+
+st.title("Excel Data Analysis")
+STIDarr=[]
+# File uploader widget
+uploaded_file = st.file_uploader("Upload Excel file", type=["xlsx"])
+if uploaded_file is not None:
+  df = pd.read_excel(uploaded_file)
+  for index, row in df.iterrows():
+      stid=row["studentID"]
+      STIDarr.append(stid)
+      stname=row["studentName"]
+      stdept=row["department"]
+      stbatch=row["studentBatch"]
+      stsem=row["sem"]
+      stemail=row["email"]
+      #st.write(stid,stname,stdept,stbatch,stsem,stemail)
+      
+      if((stdept=="CSE" or stdept=="EC")):
+      
+        driver = webdriver.Chrome()
+        driver.get("http://localhost/stud-attend/index.php")
+        driver.set_window_size(1186, 800)
+        driver.find_element(By.ID, "input1").click()
+        driver.find_element(By.ID, "input1").send_keys("admin")
+        driver.find_element(By.NAME, "pass").click()
+        driver.find_element(By.NAME, "pass").send_keys("admin")
+        driver.find_element(By.CSS_SELECTOR, "label:nth-child(3) > #optionsRadios1").click()
+        driver.find_element(By.NAME, "login").click()
+        driver.find_element(By.ID, "input1").click()
+        driver.find_element(By.ID, "input1").send_keys(str(stid))
+        driver.find_element(By.NAME, "st_name").click()
+        driver.find_element(By.NAME, "st_name").send_keys(str(stname))
+        driver.find_element(By.NAME, "st_dept").click()
+        driver.find_element(By.NAME, "st_dept").send_keys(str(stdept))
+        driver.find_element(By.NAME, "st_batch").click()
+        driver.find_element(By.NAME, "st_batch").send_keys(str(stbatch))
+        driver.find_element(By.NAME, "st_sem").click()
+        driver.find_element(By.NAME, "st_sem").send_keys(str(stsem))
+        driver.find_element(By.NAME, "st_email").click()
+        driver.find_element(By.NAME, "st_email").send_keys(str(stemail))
+        driver.find_element(By.NAME, "std").click()
+        st.write("Uploaded Excel Data to DB:")
+        st.write(stid,stname,stdept,stbatch,stsem,stemail)
+
+  for x in STIDarr:
+        driver.get("http://localhost/stud-attend/admin/deleteStudtest.php?studid="+str(x))
+driver.close()
+
+
   
