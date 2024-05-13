@@ -7,6 +7,7 @@ from pymongo import MongoClient
 from jproperties import Properties 
 import pandas as pd
 import streamlit as st
+import subprocess
 
 configs = Properties() 
   
@@ -100,3 +101,7 @@ data["status"]=stat
 
 x=coll.insert_one(data)
 
+if stat=="Fail":
+    with open("testcasename.txt", "w") as file:
+        file.write("Login to the Website")
+    subprocess.run(['python','..\\Email_generator\\email_final.py'])

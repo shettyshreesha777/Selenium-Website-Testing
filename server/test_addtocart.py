@@ -8,7 +8,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from pymongo import MongoClient 
-import sys
+import subprocess
 
 #mongo_url="mongodb://localhost:27017"
 mongo_url="mongodb+srv://ShreeshaShetty:Shreesha7%40@cluster0.ldusz7x.mongodb.net/"
@@ -36,17 +36,19 @@ try:
             driver.find_element(By.CSS_SELECTOR, ".brands:nth-child("+str(int(arr[i])+2)+") img").click()
             driver.find_element(By.LINK_TEXT, "Add To Bag").click()
             driver.find_element(By.CSS_SELECTOR, "h4").click()
+            get_text=driver.find_element(By.ID, "cartcount").text
+
         else:
             flag=driver.find_element(By.CSS_SELECTOR, ".brands:nth-child("+str(int(arr[i])+2)+") img")
             driver.find_element(By.CSS_SELECTOR, ".brands:nth-child("+str(int(arr[i])+2)+") img").click()
             driver.find_element(By.LINK_TEXT, "Add To Bag").click()
             driver.find_element(By.CSS_SELECTOR, "h4").click()
+            get_text=driver.find_element(By.ID, "cartcount").text
             driver.back()
             driver.back()
 
 except:
     print("\n\n Item not found Test case failed!!! \n\n")
-get_text=driver.find_element(By.ID, "cartcount").text
 print(get_text)
 print("Items in Cart:",len(arr))
 if str(len(arr)) in get_text:
@@ -58,9 +60,10 @@ else:
     stat="Fail"
     
 #delete items added by test case
-for z in range(len(arr)):
-    driver.find_element(By.ID, "removeitem").click()
-driver.close() 
+if stat=="Pass":    
+    for z in range(len(arr)):
+        driver.find_element(By.ID, "removeitem").click()
+    driver.close() 
 
 ts=datetime.datetime.now()
 date_time=ts.strftime("%d-%m-%Y, %H:%M:%S")
@@ -81,3 +84,8 @@ data["time"]=datetime.datetime.now()
 data["Output"]=t1
 data["status"]=stat
 x=coll.insert_one(data)
+
+if stat=="Fail":
+    with open("testcasename.txt", "w") as file:
+        file.write("Add Item to Cart")
+    subprocess.run(['python','..\\Email_generator\\email_final.py'])

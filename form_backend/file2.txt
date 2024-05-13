@@ -1,0 +1,13 @@
+
+Test Case on Add to Cart
+12-04-2024, 11:08:46   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+12-04-2024, 11:14:00   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+12-04-2024, 11:17:07   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+12-04-2024, 11:20:15   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Add to Cart
+12-04-2024, 11:33:46   Run 1:	Add to Cart Unsuccesfull :(
+Test Case on Carosel Button
+12-04-2024, 12:19:26   Run 1:	Carosel Button is Working
