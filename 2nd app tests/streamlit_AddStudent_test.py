@@ -17,6 +17,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 st.title("Excel Data Analysis")
 STIDarr=[]
+driver = webdriver.Chrome()
 # File uploader widget
 uploaded_file = st.file_uploader("Upload Excel file", type=["xlsx"])
 if uploaded_file is not None:
@@ -33,7 +34,6 @@ if uploaded_file is not None:
       
       if((stdept=="CSE" or stdept=="EC")):
       
-        driver = webdriver.Chrome()
         driver.get("http://localhost/stud-attend/index.php")
         driver.set_window_size(1186, 800)
         driver.find_element(By.ID, "input1").click()

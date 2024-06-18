@@ -1,3 +1,4 @@
+import os
 from pymongo import MongoClient
 from datetime import datetime
 import smtplib
@@ -82,11 +83,17 @@ def capture_user_information():
     filedata=filedata.split(" ")
     user_name = filedata[0]
     user_email = filedata[1]
+    application_name=filedata[2];
     return {"name": user_name, "email": user_email}
 
 def generate_pdf_report(application_name, passcount, failcount, run_by, no_of_test_cases, test_summary, failed_tests, user_info, test_results,):
     # Create a PDF file
-    pdf_file = f"{application_name}_test_report.pdf"
+    directory_path = "C:/xampp/htdocs/Selenium Website Testing/TestCase_Reports"  # Change this to your desired directory
+    # Ensure the directory exists, if not, create it
+    os.makedirs(directory_path, exist_ok=True)
+    # Create the full file path
+    pdf_file = os.path.join(directory_path, f"{application_name}_test_report.pdf")
+    #pdf_file = f"{application_name}_test_report.pdf"
     doc = SimpleDocTemplate(pdf_file, pagesize=letter)
     
     # Define styles

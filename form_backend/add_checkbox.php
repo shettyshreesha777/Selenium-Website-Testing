@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usr=$_POST["username"];
     $email=$_POST["newemail"];
 
-    include('Database/db.php');
+    include('../Database/db.php');
 
     if($newCheckbox!="" && $usr!="" && $email!="" && $newurl!="")
     {

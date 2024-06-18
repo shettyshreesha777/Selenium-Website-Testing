@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+include("Login/connection.php");
+
+if (!isset($_SESSION['username'])) {
+    header("location: Login/login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   
@@ -83,7 +92,42 @@
         <ul>
           <li><a href="#hero">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Test Logs</a></li>
+          <li><a href="Login/login.php">Login</a></li>
+          <li class="nav-item">
+                            <div class="dropdown">
+                                <a class='nav-link dropdown-toggle' href='Login/edit.php?id=$res_id' id='dropdownMenuLink'
+                                    data-bs-toggle='dropdown' aria-expanded='false'>
+                                    <i class='bi bi-person'></i>
+                                </a>
+
+
+                                <ul class="dropdown-menu mt-2 mr-0" aria-labelledby="dropdownMenuLink">
+
+                                    <li>
+                                        <?php
+
+                                        $id = $_SESSION['id'];
+                                        $query = mysqli_query($conn, "SELECT * FROM users WHERE id = $id");
+
+                                        while ($result = mysqli_fetch_assoc($query)) {
+                                            $res_username = $result['name'];
+                                            $res_email = $result['email'];
+                                            $res_id = $result['id'];
+                                        }
+
+
+                                        echo "<a class='dropdown-item' href='Login/edit.php?id=$res_id'>Change Profile</a>";
+
+
+                                        ?>
+
+                                    </li>
+                                    <li><a class="dropdown-item" href="#"><?php echo "Hello, ".$res_username;?></a></li>
+                                    <li><a class="dropdown-item" href="Login/logout.php">Logout</a></li>
+                                </ul>
+                            </div>
+
+                        </li>
 
         </ul>
       </nav><!-- .navbar -->
@@ -128,8 +172,9 @@
 echo ' <div class="icon-boxes position-relative">
 <div class="container position-relative">
   <div class="row gy-4 mt-5">';
+  $appname=$_GET['appname'];
     // Directory containing the text files
-    $directory = './testscript_uploads/';
+    $directory = './testscript_uploads/'.$appname.'/';
 
     // Get all text files in the directory
     $files = glob($directory . '*.py');
@@ -257,7 +302,7 @@ echo "</div>
             <li><a href="#">Home</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Test Logs</a></li>
-            <li><a href="#">Test Cases</a></li>
+            <li><a href="Close_terminals/killTerminal.php">Kill Terminals</a></li>
           </ul>
         </div>
       </div>

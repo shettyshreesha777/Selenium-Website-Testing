@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 @app.route('/run-script-testLog', methods=['GET'])
 def MongoLog():
-    quantum_path= 'mongotables.py'
+    quantum_path= '..\mongotables.py'
 
     subprocess.run(['python',quantum_path])
     print("Test successful")
@@ -21,20 +21,14 @@ def MongoLog():
 
 @app.route('/run-script1', methods=['GET'])
 def run_streamlitform():
-    subprocess.run(["python", "-m", "streamlit", "run",'c:\\xampp\\htdocs\\Selenium Website Testing\\testscript_uploads\\streamlitform.py'])
+    subprocess.run(["python", "-m", "streamlit", "run",'c:\\xampp\\htdocs\\Selenium Website Testing\\testscript_uploads\\MensApparel\\streamlitform.py'])
     return 'Executed streamlitform.py!'
 
 
 @app.route('/run-script2', methods=['GET'])
 def run_streamlitLoginTC():
-    subprocess.run(["python", "-m", "streamlit", "run",'c:\\xampp\\htdocs\\Selenium Website Testing\\testscript_uploads\\streamlitLoginTC.py'])
+    subprocess.run(["python", "-m", "streamlit", "run",'c:\\xampp\\htdocs\\Selenium Website Testing\\testscript_uploads\\MensApparel\\streamlitLoginTC.py'])
     return 'Executed streamlitLoginTC.py!'
-
-
-@app.route('/run-script3', methods=['GET'])
-def run_test_sport():
-    subprocess.run(['python','c:\\xampp\\htdocs\\Selenium Website Testing\\testscript_uploads\\test_sport.py'])
-    return 'Executed test_sport.py!'
 
 
 if __name__ == '__main__':

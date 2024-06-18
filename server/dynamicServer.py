@@ -3,7 +3,7 @@ from flask import Flask, jsonify
 import importlib.util
 import subprocess
 
-def generate_flask_app(directory):
+def generate_flask_app(directory,x):
     app_name = "create_server"
     flask_app = f"""
 import os
@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 @app.route('/run-script-testLog', methods=['GET'])
 def MongoLog():
-    quantum_path= 'mongotables.py'
+    quantum_path= '..\\mongotables.py'
 
     subprocess.run(['python',quantum_path])
     print("Test successful")
@@ -34,7 +34,7 @@ def MongoLog():
                 flask_app += f"""
 @app.route('/run-script{i}', methods=['GET'])
 def run_{filename[:-3]}():
-    subprocess.run(["python", "-m", "streamlit", "run",'c:\\\\xampp\\\\htdocs\\\\Selenium Website Testing\\\\testscript_uploads\\\\{filename}'])
+    subprocess.run(["python", "-m", "streamlit", "run",'c:\\\\xampp\\\\htdocs\\\\Selenium Website Testing\\\\testscript_uploads\\\\{x}\\\\{filename}'])
     return 'Executed {filename}!'
 
 """
@@ -44,7 +44,7 @@ def run_{filename[:-3]}():
                 flask_app += f"""
 @app.route('/run-script{i}', methods=['GET'])
 def run_{filename[:-3]}():
-    subprocess.run(['python','c:\\\\xampp\\\\htdocs\\\\Selenium Website Testing\\\\testscript_uploads\\\\{filename}'])
+    subprocess.run(['python','c:\\\\xampp\\\\htdocs\\\\Selenium Website Testing\\\\testscript_uploads\\\\{x}\\\\{filename}'])
     return 'Executed {filename}!'
 
 """
@@ -60,7 +60,11 @@ if __name__ == '__main__':
         file.write(flask_app)
 
 if __name__ == "__main__":
-    directory = "../testscript_uploads/"
-    generate_flask_app(directory)
+    arr=[]
+    with open("C:/xampp/htdocs/Selenium Website Testing/form_backend/admindetails.txt", "r") as file:
+        arr = file.read()
+    arr=arr.split(' ')
+    directory = "C:/xampp/htdocs/Selenium Website Testing/testscript_uploads/" + arr[2]+"/"
+    generate_flask_app(directory,arr[2])
     print("Flask app file generated successfully!")
 

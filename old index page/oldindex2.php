@@ -4,8 +4,10 @@ session_start();
 include("Login/connection.php");
 
 if (!isset($_SESSION['username'])) {
-    header("location: Login/login.php");
+    header("location:Login/login.php");
 }
+
+
 
 
 ?>
@@ -206,23 +208,15 @@ if (!isset($_SESSION['username'])) {
         </div>
       </div>
     </div>
-<h3 style="margin-top:100px; margin-bottom:40px; color:white; text-align:center;">Welcome <?php echo $res_username ?></h3>
+<h3 style="margin-top:100px; margin-bottom:40px; color:white; text-align:center;">Choose the Application to be Tested</h3>
 <div id="myform">
-<form action="./form_backend/newPrepare_TestEnv.php" method="POST" enctype="multipart/form-data">
-  <h4>Select the Application</h4>
+<form action="./form_backend/Prepare_TestEnv.php" method="POST" enctype="multipart/form-data">
+  <h4>Select the Website</h4>
     <?php
             	include('Database/db.php');
-                if(strcmp($_SESSION['username'],"admin")==0)
-                {
-                  $query1="SELECT * FROM websites";
-                $result=mysqli_query($conn,$query1);
-                }
-                else{
-                  $query1="SELECT * FROM websites WHERE username LIKE '$res_username'";
-                $result=mysqli_query($conn,$query1);
-                }
-              
-              
+              $query1="SELECT *
+                       FROM websites";
+              $result=mysqli_query($conn,$query1);
 
               while($row=mysqli_fetch_assoc($result))
               {
@@ -231,7 +225,7 @@ if (!isset($_SESSION['username'])) {
               }
           
             //   $insertOrder="INSERT INTO orders (cid,itemid,shipaddress,total)
-            //                  SELECT cid, itemid, caddress,price
+            //                 SELECT cid, itemid, caddress,price
             //                 FROM customer, item
             //                 WHERE cid='$custid' AND itemid='$x'";
             //   $result=mysqli_query($conn,$insertOrder);
@@ -243,12 +237,14 @@ if (!isset($_SESSION['username'])) {
         ?>
         <br><br><br>
   <div class="form-group">
+    <label for="pwd">Upload Test Scripts</label>
+    <input class="form-control" type="file" name="fileUpload[]" multiple />  </div>
 
   <button type="submit" class="btn btn-default" name="submit">Submit</button>
 </form>
 </div><!-- center menu-->
 
-  <!-- ADD new Website BUTTON 
+  <!-- ADD new Website BUTTON  -->
 <button class="open-button" onclick="openForm()">ADD NEW WEBSITE</button>  
 <div class="form-popup" id="myForm">
   <form action="./form_backend/add_checkbox.php" class="form-container" method="POST">
@@ -266,8 +262,7 @@ if (!isset($_SESSION['username'])) {
     <button type="submit" class="btn">Login</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
-</div> 
-        -->
+</div>
 
 <br><br>
 </div>

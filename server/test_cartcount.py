@@ -32,7 +32,7 @@ else:
 driver.close()
 ts=datetime.datetime.now()
 date_time=ts.strftime("%d-%m-%Y, %H:%M:%S")
-f = open("file2.txt", "a")
+f = open("..\\file2.txt", "a")
 f.write("\nTest Case on Items in Cart")
 f.write("\n"+date_time+"   Run 1:"+"\t"+t1)
 f.close()

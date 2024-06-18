@@ -11,7 +11,7 @@ import subprocess
 
 configs = Properties() 
   
-with open('server\\ScriptData.properties','rb') as read_prop: 
+with open('..\\server\\ScriptData.properties','rb') as read_prop: 
     configs.load(read_prop) 
 mongo_url={configs.get("MongoDB_Connect").data}
 #mongo_url="mongodb+srv://ShreeshaShetty:Shreesha7%40@cluster0.ldusz7x.mongodb.net/"
@@ -82,7 +82,7 @@ else:
 driver.close() 
 ts=datetime.datetime.now()
 date_time=ts.strftime("%d-%m-%Y, %H:%M:%S")
-f = open("file2.txt", "a")
+f = open("..\\file2.txt", "a")
 f.write("\nTest Case on login")
 f.write("\n"+date_time+"   Run 1:"+"\t"+t1)
 f.close()
@@ -101,7 +101,7 @@ data["status"]=stat
 
 x=coll.insert_one(data)
 
-if stat=="Fail":
+if stat=="Fail" or stat=="Pass":
     with open("testcasename.txt", "w") as file:
         file.write("Login to the Website")
     subprocess.run(['python','..\\Email_generator\\email_final.py'])
